@@ -1,4 +1,4 @@
 webpack.config.js
 node_modules/
 dist/
-tests/e2e_tests.spec.js
+e2e-tests/
