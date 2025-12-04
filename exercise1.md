@@ -1,0 +1,7 @@
+For this short text, let’s assume the application is written in Python. Common steps in a CI setup for a Python project include linting, testing, and building. For linting, common tools include Pylint or Flake8. Testing is usually done with pytest, which provides a clean syntax and good plugin support. Poetry and setuptools are examples of building tools for Python, if the application needs to be built into a runnable software bundle. 
+
+There are plenty of good alternatives to set up the CI besides Jenkins and GitHub Actions. GitLab CI/CD offers integrated pipelines directly tied to GitLab repositories, similar to GitHub Actions that are directly tied to GitHub repositories. CircleCI, on the other hand, provides a cloud-based solution with good scalability. 
+
+Deciding between a self-hosted or a cloud-based environment depends on several factors. A self-hosted CI offers more control over resources and security, and is more flexible overall but it requires maintenance and knowledge on infrastructures. A cloud-based environment, on the other hand, reduces maintenance effort and scales automatically to the files. 
+
+The decision would depend on the team’s budget, data security requirements, and deployment targets. If sensitive data or internal networks are involved, self-hosting could be better, but otherwise cloud-based CI is faster and easier to manage. 
