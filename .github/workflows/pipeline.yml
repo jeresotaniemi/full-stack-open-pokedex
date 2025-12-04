@@ -72,4 +72,3 @@ jobs:
           title: Deployment failed!
           severity: error
           details: Commit ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }} broke the build!
-
