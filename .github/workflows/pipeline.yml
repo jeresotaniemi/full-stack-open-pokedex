@@ -36,12 +36,12 @@ jobs:
           retention-days: 30
 
       - name: Trigger deployment
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, '#skip') == false}}
         run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
 
   tag_release:
     needs: [simple_deployment_pipeline]
-    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push'}}
+    if: ${{ github.ref_name == 'main' && github.event_name == 'push' && contains(github.event.head_commit.message, '#skip') == false}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
