@@ -58,17 +58,18 @@ jobs:
     steps:
       - name: Build success
         if: ${{ success() }}
-        uses: rjstone/discord-webhook-notify@v2
+        uses: sarisia/actions-status-discord@v1
         with:
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-          severity: info
-          details: Deployment successful!
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: Success
+          title: Deployment successful!
+
 
       - name: Build failure
         if: ${{ failure() }}
-        uses: rjstone/discord-webhook-notify@v2
+        uses: sarisia/actions-status-discord@v1
         with:
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: Failure
           title: Deployment failed!
-          severity: error
-          details: Commit ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }} broke the build!
+          description: Commit `${{ github.sha }}` - ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }} broke the build!
