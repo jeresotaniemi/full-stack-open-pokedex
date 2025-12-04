@@ -10,6 +10,7 @@ on:
 
 jobs:
   simple_deployment_pipeline:
+    name: CI
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
