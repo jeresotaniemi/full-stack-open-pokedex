@@ -14,11 +14,6 @@ app.get('/health', (req, res) => {
   res.send('ok')
 })
 
-// Simulate application breaking down
-app.get('/', (req, res) => {
-  res.status(500).send('Broken on purpose')
-})
-
 app.listen(PORT, () => {
   console.log(`server started on port ${PORT}`)
 })
