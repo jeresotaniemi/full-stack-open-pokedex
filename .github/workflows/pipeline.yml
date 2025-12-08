@@ -57,7 +57,7 @@ jobs:
 #    needs: [simple_deployment_pipeline]
 #    steps:
 #      - name: Build success
-#        if: ${{ success() }}
+#        if: ${{ success() && github.event_name == 'push' }}
 #        uses: sarisia/actions-status-discord@v1
 #        with:
 #          webhook: ${{ secrets.DISCORD_WEBHOOK }}
